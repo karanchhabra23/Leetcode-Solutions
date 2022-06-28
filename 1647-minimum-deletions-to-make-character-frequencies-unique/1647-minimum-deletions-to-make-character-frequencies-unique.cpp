@@ -2,11 +2,11 @@ class Solution {
 public:
     int minDeletions(string s) {
         int n = s.size();
-        map<char,int>m;
+        unordered_map<char,int>m;
         for(auto &it:s){
             m[it]++;
         }
-        map<int,int>mp;
+        unordered_map<int,int>mp;
         int maxi = 0;
         set<int>st;
         for(int i = 0;i<=n;i++){
