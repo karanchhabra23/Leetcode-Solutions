@@ -26,9 +26,9 @@ public:
             }
         }
         for(int i = 0;i<a.size();i++){
-            string p  = find(a[i][1]);
+            // string p  = find(a[i][1]);
             for(int j = 1;j<a[i].size();j++){
-                baap[find(a[i][j])] = p;
+                Union(a[i][1],a[i][j]);
             }
         }
         for(int i = 0;i<a.size();i++){
