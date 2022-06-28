@@ -2,9 +2,9 @@ class Solution {
 public:
     int minDeletions(string s) {
         int n = s.size();
-        unordered_map<char,int>m;
+        int m[26] = {0};
         for(auto &it:s){
-            m[it]++;
+            m[it-'a']++;
         }
         unordered_map<int,int>mp;
         int maxi = 0;
@@ -13,8 +13,8 @@ public:
             st.insert(i);
         }
         for(char c = 'a';c<='z';c++){
-            mp[m[c]]++;
-            maxi = max(maxi,mp[m[c]]);
+            mp[m[c-'a']]++;
+            maxi = max(maxi,mp[m[c-'a']]);
         }
         // mp kehri frequency kinni vaar aa chukki
         // _print(mp);
