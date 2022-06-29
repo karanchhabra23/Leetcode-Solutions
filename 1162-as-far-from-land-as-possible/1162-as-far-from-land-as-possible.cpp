@@ -21,7 +21,6 @@ public:
             while(sz--){
                 auto [x,y] = q.front();
                 q.pop();
-                
                 for(int i = 0;i<4;i++){
                     int newx = x+dx[i];
                     int newy = y+dx[i+1];
