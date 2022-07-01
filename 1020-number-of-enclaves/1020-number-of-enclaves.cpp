@@ -13,7 +13,7 @@ public:
                 a[i][m-1]= 0;
                 q.push({i,m-1});
             }
-        }    
+        }     
         for(int j = 0;j<m;j++){
             if(a[0][j]==1){
                 a[0][j] = 0;
