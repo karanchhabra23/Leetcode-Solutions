@@ -6,7 +6,8 @@ public:
         c = k;
         for(auto &it:nums){
             q.push(it);
-            if(q.size()>c)q.pop();
+            if(q.size()>c)
+                q.pop();
         }
     }
     
