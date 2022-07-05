@@ -19,14 +19,14 @@ public:
             }
 
             int x = sum%2;
-            res=to_string(x)+res;
+            res+=x+'0';
             carry = sum/2;
 
         }
         if(carry){
-            res=to_string(carry)+res;
+            res+=carry+'0';
         }
-        // reverse(res.begin(),res.end());
+        reverse(res.begin(),res.end());
         return res;
     }
 };
