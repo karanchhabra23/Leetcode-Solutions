@@ -1,14 +1,14 @@
 class Solution {
 public:
     int dx[5] = {0,1,0,-1,0};
-    int dfs(int x, int y, int n, int m, vector<vector<int>>&a){
+    int dfs(int x, int y, int n, int m, vector<vector<int>>&grid){
         int sum = 1;
-        a[x][y] = 0;
+        grid[x][y] = 0;
         for(int t = 0;t<4;t++){
             int newx = x + dx[t];
             int newy = y + dx[t+1];
-            if(newx>=0 && newx<n && newy>=0 && newy<m && a[newx][newy]==1){
-                sum+=dfs(newx,newy,n,m,a);
+            if(newx>=0 && newx<n && newy>=0 && newy<m && grid[newx][newy]==1){
+                sum+=dfs(newx,newy,n,m,grid);
             }
         }
         return sum;
