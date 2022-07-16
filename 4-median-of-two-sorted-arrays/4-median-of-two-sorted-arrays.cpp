@@ -6,22 +6,22 @@ public:
         if(n2<n1){
             return findMedianSortedArrays(b,a);
         }
-        if(n1==0){
-            if(n2%2==0){
-                return (double)(b[n2/2]+b[(n2-1)/2])/2.0;
-            }
-            else{
-                return (double)b[n2/2];
-            }
-        }
-        if(n2==0){
-            if(n1%2==0){
-                return (double)(a[n1/2]+a[(n1-1)/2])/2.0;
-            }
-            else{
-                return (double)a[n1/2];
-            }
-        }
+        // if(n1==0){
+        //     if(n2%2==0){
+        //         return (double)(b[n2/2]+b[(n2-1)/2])/2.0;
+        //     }
+        //     else{
+        //         return (double)b[n2/2];
+        //     }
+        // }
+        // if(n2==0){
+        //     if(n1%2==0){
+        //         return (double)(a[n1/2]+a[(n1-1)/2])/2.0;
+        //     }
+        //     else{
+        //         return (double)a[n1/2];
+        //     }
+        // }
         int lo = 0;
         int hi = n1;
         while(lo<=hi){
