@@ -22,14 +22,14 @@ public:
         ans%=mod;
         if(k>=n)
         ans-=solve(n-1,k-n);
-        
+        ans = (ans + mod)%mod;
         return dp[n][k] = ans%mod;
         
     }
     int kInversePairs(int n, int k) {
         
         memset(dp,-1,sizeof(dp));
-        return (solve(n,k)+mod)%mod;
+        return solve(n,k);
         
     }
 };
