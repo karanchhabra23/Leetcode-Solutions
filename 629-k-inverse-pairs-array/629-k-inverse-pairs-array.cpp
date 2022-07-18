@@ -3,33 +3,31 @@ public:
     const int mod = 1e9 + 7;
     typedef long long ll;
     ll dp[1010][1010];
-    ll solve(int n,int k){
-        if(n==2){
-            if(k==0 || k==1){
-                return 1;
-            }
-            return 0;
-        }
-        if(k<0 || k>(n*(n-1))/2)return 0;
-        if(k==0 || k== (n*(n-1))/2)return 1;
-        if(dp[n][k]!=-1){
-            return dp[n][k];
-        }
-        ll ans =0 ;
-        ans+= solve(n,k-1);
-        ans%=mod;
-        ans+=solve(n-1,k);
-        ans%=mod;
-        if(k>=n)
-        ans-=solve(n-1,k-n);
-        ans = (ans + mod)%mod;
-        return dp[n][k] = ans%mod;
-        
-    }
     int kInversePairs(int n, int k) {
         
-        memset(dp,-1,sizeof(dp));
-        return solve(n,k);
+        // memset(dp,-1,sizeof(dp));
+        // return solve(n,k);
+        if(n==1){
+            return k==0;
+        }
+        dp[2][0] = 1;
+        dp[2][1] = 1;
+        for(int i = 3;i<=n;i++){
+            dp[i][0]  = 1;
+            for(int j = 1;j<=k;j++){
+                if(j>(i)*(i-1)/2){
+                    continue;
+                }
+                dp[i][j] += dp[i][j-1];
+                dp[i][j] += dp[i-1][j] ;
+                if(j>=i){
+                    dp[i][j] +=  mod - dp[i-1][j-i];
+                }
+                dp[i][j]+=mod;
+                dp[i][j]%=mod;
+            }
+        }
+        return dp[n][k];
         
     }
 };
